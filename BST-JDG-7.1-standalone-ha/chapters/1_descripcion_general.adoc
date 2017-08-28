@@ -1,0 +1,172 @@
+== Descripción de la solución propuesta
+
+
+=== Arquitectura de referencia
+
+La arquitectura propuesta cuenta con características que habilitan la alta disponibilidad y el escalamiento horizontal a un bajo costo de operación, no obstante para poder lograr dicha propuesta, es necesario que se cumplan los siguientes requisitos obligatorios:
+
+. *El ambiente completo deberá estar en una red aislada*
+// . *La red deberá soportar multicast*
+
+
+A continuación se presenta la arquitectura de referencia a implementar, demostrando los nodos, sus interacciones y componentes.
+
+[.text-center]
+.Arquitectura de referencia
+image::plataforma-qa_davo.jpg[pdfwidth=90%,align=center]
+
+<<<
+=== Distribución
+
+
+.Dominio de aplicación: DocuGrid Server (módulo estático)
+[cols=">3,5", width=70%,align=center]
+|===
+| *Nombre dominio*
+| JDG
+
+| *Perfil servidor*
+| standalone-ha
+
+// | *Modo de clusterización (multicast)*
+// | Autodiscovery Multicast/udp
+
+| *Cantidad de nodos*
+| 1
+
+|===
+
+
+.Dominio de aplicación: DocuGrid Repo (módulo WAR)
+[cols=">3,5", width=70%,align=center]
+|===
+| *Nombre dominio*
+| EAP
+
+| *Perfil servidor*
+| standalone-ha
+
+// | *Modo de clusterización (multicast)*
+// | Autodiscovery Multicast/udp
+
+| *Cantidad de nodos*
+| 1
+
+|===
+
+<<<
+=== Descripción del entorno de ejecución para cada nodo
+
+.Características {product-initials-jdg} {product-version-jdg}
+[cols="3,5", width=70%,align=center]
+|===
+| *vCPU*
+| {product-vcpu-jdg}
+
+| *RAM*
+| {product-ram-jdg}
+
+| *DISCO*
+| {product-hd-jdg}
+
+| *Interfaz de Red: {enviroment}*
+| {product-production-network-jdg}
+
+| *Interfaz de Red: Administrativa*
+| {product-admin-network-jdg}
+
+| *Interfaz de Red: Backup*
+| {product-backup-network-jdg}
+
+| *Sistema Operativo*
+| {product-os-jdg}
+
+|===
+
+.Características {product-initials-eap} {product-version-eap}
+[cols="3,5", width=70%,align=center]
+|===
+| *vCPU*
+| {product-vcpu-eap}
+
+| *RAM*
+| {product-ram-eap}
+
+| *DISCO*
+| {product-hd-eap}
+
+| *Interfaz de Red: {enviroment}*
+| {product-production-network-eap}
+
+| *Interfaz de Red: Administrativa*
+| {product-admin-network-eap}
+
+| *Interfaz de Red: Backup*
+| {product-backup-network-eap}
+
+| *Sistema Operativo*
+| {product-os-eap}
+
+|===
+
+<<<
+
+=== Distribución de particiones.
+.Distribución {product-initials-jdg} {product-version-jdg}
+[cols="3,5", width=70%,align=center]
+|===
+| *Punto Montaje*
+| *Tamaño*
+
+| */*
+| {mount-point-root-jdg}
+
+| */var*
+| {mount-point-var-jdg}
+
+| */var/log*
+| {mount-point-varlog-jdg}
+
+| */tmp*
+| {mount-point-tmp-jdg}
+
+| */home*
+| {mount-point-home-jdg}
+
+| */opt*
+| {mount-point-opt-jdg}
+
+| *swap*
+| {mount-point-swap-jdg}
+
+|===
+
+=== Distribución de particiones.
+.Distribución {product-initials-eap} {product-version-eap}
+[cols="3,5", width=70%,align=center]
+|===
+| *Punto Montaje*
+| *Tamaño*
+
+| */*
+| {mount-point-root-eap}
+
+| */var*
+| {mount-point-var-eap}
+
+| */var/log*
+| {mount-point-varlog-eap}
+
+| */tmp*
+| {mount-point-tmp-eap}
+
+| */home*
+| {mount-point-home-eap}
+
+| */opt*
+| {mount-point-opt-eap}
+
+| *swap*
+| {mount-point-swap-eap}
+
+|===

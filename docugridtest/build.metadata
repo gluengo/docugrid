@@ -1,0 +1,15 @@
+# Created by buildmetadata-maven-plugin 1.7.0 ( SHA: 6f444cae ) 
+build.artifactId=docugridtest
+build.groupId=docugridtest
+build.java.compiler=HotSpot 64-Bit Tiered Compilers
+build.java.runtime.name=OpenJDK Runtime Environment
+build.java.runtime.version=1.8.0_131-b12
+build.java.vendor=Oracle Corporation
+build.java.vm=OpenJDK 64-Bit Server VM
+build.maven.execution.cmdline=package
+build.maven.version=3.3.9
+build.scmRevision.date=27.06.2017
+build.scmRevision.id=aca6deb7e1c5c44fab9e7dcc651626115abe568a
+build.scmRevision.url=scm\:git\:git@github.com\:jboss/jboss-parent-pom.git/docugridtest
+build.version=22.0.0.redhat-1
+build.version.full=22.0.0.redhat-1raca6deb7e1c5c44fab9e7dcc651626115abe568a

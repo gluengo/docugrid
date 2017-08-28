@@ -1,0 +1,40 @@
+== Prefacio
+=== Confidencialidad, Copyright y responsabilidad
+
+Este es un documento de orientación al cliente entre Red Hat, Inc. y {customer}.
+Copyright {localdate}  Red Hat, Inc. Todos los derechos reservados. Ninguna parte
+de la obra amparada por el derecho de autor en este documento puede ser reproducida
+ o utilizada de ninguna forma ni por ningún medio-gráfico, electrónico o mecánico,
+ incluyendo el fotocopiado, grabación o sistemas de almacenamiento y recuperación
+ de información, sin permiso por escrito de Red Hat con excepción de lo que se
+  requiere para compartir esta información según lo previsto con las partes
+  confidenciales antes mencionados.
+
+=== Acerca de este documento
+
+El objetivo de este documento es proveer una descripción de la arquitectura que sera instalada en {customer}
+a fin de comprender las capas y productos que la componen, este documento comprende el detalle a nivel de especificaciones
+que debe tener las maquinas que contaran con el producto {product}.
+
+=== Audiencia
+Este documento está dirijido para los administradores de sistemas, arquitectos y desarrolladores de {customer}
+
+=== Documentación Relevante
+Para conocer los procedimientos asociados a la configuración e implementación, sírvase a revisar la siguiente documentación oficial:
+
+. Guía de Instalación JBoos Data Grid 7.1: https://access.redhat.com/documentation/en-us/red_hat_jboss_data_grid/7.1/pdf/getting_started_guide/Red_Hat_JBoss_Data_Grid-7.1-Getting_Started_Guide-en-US.pdf
+. Guía de Administración y Configuración JBoos Data Grid 7.1: https://access.redhat.com/documentation/en-us/red_hat_jboss_data_grid/7.1/pdf/administration_and_configuration_guide/Red_Hat_JBoss_Data_Grid-7.1-Administration_and_Configuration_Guide-en-US.pdf
+. Guía de Instalación JBoos Enterprise Application Platform 7.0: https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html/installation_guide/
+
+
+=== Terminología
+
+.Tabla de términos
+[cols=2,cols="1,5",options=header]
+|===
+<|Término <|Definición
+
+|JDG | JBoss Data Grid 7.1
+|EAP | Enterprise Application Platform 7.0.5
+
+|===

@@ -1,0 +1,5 @@
+Arquetipo ajustado del proyecto https://gitlab.cee.redhat.com/abradsha/asciidoctor-ej
+
+
+
+Instalación: https://gitlab.cee.redhat.com/abradsha/asciidoctor-ej/blob/master/INSTALL.adoc

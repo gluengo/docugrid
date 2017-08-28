@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	metadata-complete="true" version="3.0">
+
+	<display-name>docugrid</display-name>
+
+	<listener>
+		<listener-class>org.jboss.resteasy.plugins.server.servlet.ResteasyBootstrap</listener-class>
+	</listener>
+
+	<listener>
+		<listener-class>org.jboss.resteasy.plugins.spring.SpringContextLoaderListener</listener-class>
+	</listener>
+
+	<servlet>
+		<servlet-name>docugrid</servlet-name>
+		<servlet-class>org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher</servlet-class>
+	</servlet>
+
+
+	<!-- ********************** -->
+	<context-param>
+		<param-name>resteasy.role.based.security</param-name>
+		<param-value>true</param-value>
+	</context-param>
+
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>docugrid</web-resource-name>
+			<url-pattern>/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>redhat</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+	<login-config>
+		<auth-method>BASIC</auth-method>
+		<realm-name>ApplicationRealm</realm-name>
+	</login-config>
+
+	<security-role>
+		<role-name>redhat</role-name>
+	</security-role>
+
+	<!-- ********************** -->
+
+	<servlet-mapping>
+		<servlet-name>docugrid</servlet-name>
+		<url-pattern>/*</url-pattern>
+	</servlet-mapping>
+
+</web-app>

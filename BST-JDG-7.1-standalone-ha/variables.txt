@@ -1,0 +1,97 @@
+:doctype: book
+:listing-caption: Listing
+:toclevels: 6
+:nolang:
+:toc-title: Tabla de contenidos
+:numbered:
+:chapter-label:
+:lang: es
+:icons: font
+:pdf-page-size: A4
+:pdf-style: redhat
+:pdf-stylesdir: .
+:revnumber: 1.0.0
+:imagesdir: images
+
+:appendix-caption:
+:caution-caption: Precaución
+:example-caption: Ejemplo
+:figure-caption: Imagen
+:table-caption: Tabla
+:version-label: Versión
+
+:subject: BST Red Hat JBoss Data Grid
+:consultant:  David Espinosa
+:email:  despinos@redhat.com
+:description:  BST - ambiente {enviroment}
+:confidentiality: Confidencial
+:customer:  ATTA
+:enviroment: PROD
+
+
+
+:product-jdg: JBoss Data Grid
+:product-initials-jdg: JDG
+:product-version-jdg: 7.1
+:product-vcpu-jdg: 4 Cores
+:product-ram-jdg: 32 GB
+:product-hd-jdg: 175 GB
+:product-production-network-jdg: Sí
+:product-admin-network-jdg: Sí
+:product-backup-network-jdg: Opcional
+:product-lvm-partition-jdg: 75% del disco total sea asignado para /opt en formato LVM
+:product-os-jdg: Redhat Enterprise Linux 7.3
+:product-vips-jdg: 0
+
+:mount-point-root-jdg: 11G
+:mount-point-var-jdg: 20G
+:mount-point-varlog-jdg: 20G
+:mount-point-tmp-jdg: 15G
+:mount-point-home-jdg: 5G
+:mount-point-opt-jdg: 100G
+:mount-point-swap-jdg: 4G
+
+
+
+:product-eap: JBoss Enterprise Application Platform
+:product-initials-eap: EAP
+:product-version-eap: 7.0.5
+:product-vcpu-eap: 4 Cores
+:product-ram-eap: 10 GB
+:product-hd-eap: 124 GB
+:product-production-network-eap: Sí
+:product-admin-network-eap: Sí
+:product-backup-network-eap: Opcional
+:product-lvm-partition-eap: 75% del disco total sea asignado para /opt en formato LVM
+:product-os-eap: Redhat Enterprise Linux 7.3
+:product-vips-eap: 0
+
+:mount-point-root-eap: 20G
+:mount-point-var-eap: 20G
+:mount-point-varlog-eap: 20G
+:mount-point-tmp-eap: 10G
+:mount-point-home-eap: 5G
+:mount-point-opt-eap: 45G
+:mount-point-swap-eap: 4G
+
+
+:product-jws: JBoss Web Server
+:product-initials-jws: JWS
+:product-version-jws: 3.0.3
+:product-vcpu-jws: 6 Cores
+:product-ram-jws: 8 GB
+:product-hd-jws: 50 GB
+:product-production-network-jws: Sí
+:product-admin-network-jws: Sí
+:product-backup-network-jws: Opcional
+:product-lvm-partition-jws: 75% del disco total sea asignado para /opt en formato LVM
+:product-os-jws: Redhat Enterprise Linux 7.3
+:product-vips-jws: 0
+
+:mount-point-root-jws: 11G
+:mount-point-var-jws: 5G
+:mount-point-varlog-jws: 5G
+:mount-point-tmp-jws: 15G
+:mount-point-home-jws: 5G
+:mount-point-opt-jws: 15G
+:mount-point-swap-jws: 4G

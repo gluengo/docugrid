@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+          http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+    version="3.0">
+	<display-name>docugridweb</display-name>
+
+	<servlet>
+		<servlet-name>DocugridWebServlet</servlet-name>
+		<servlet-class>cl.redhat.docugrid.web.client.DocugridWebServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DocugridWebServlet</servlet-name>
+		<url-pattern>/DocugridWebServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>DocugridUpload</servlet-name>
+		<servlet-class>cl.redhat.docugrid.web.client.DocugridUpload</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DocugridUpload</servlet-name>
+		<url-pattern>/DocugridUpload</url-pattern>
+	</servlet-mapping>
+	<context-param>
+		<param-name>resteasy.role.based.security</param-name>
+		<param-value>true</param-value>
+	</context-param>
+
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>docugridweb</web-resource-name>
+			<url-pattern>/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>redhat</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+	<login-config>
+		<auth-method>BASIC</auth-method>
+		<realm-name>ApplicationRealm</realm-name>
+	</login-config>
+
+	<security-role>
+		<role-name>redhat</role-name>
+	</security-role>
+
+
+</web-app>

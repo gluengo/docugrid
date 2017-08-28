@@ -1,0 +1,23 @@
+{
+	"id": "1",
+	"versiones":[
+		{
+            "nombre":"miarchivo",
+            "tipo":"pdf",
+            "fecha":"15/5/2017",
+            "usuario":"lmestre",
+            "bin":"12345678",
+            "version":"0"
+	},
+		{
+            "nombre":"miarchivo",
+            "tipo":"pdf",
+            "fecha":"15/6/2017",
+            "usuario":"lmestre",
+            "bin":"12345679",
+            "version":"1"
+	}
+	]
+
+
+}

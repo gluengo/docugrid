@@ -1,0 +1,241 @@
+== Descripción de la solución propuesta
+
+
+=== Arquitectura de referencia
+
+La arquitectura propuesta cuenta con características que habilitan la alta disponibilidad y el escalamiento horizontal a un bajo costo de operación, no obstante para poder lograr dicha propuesta, es necesario que se cumplan los siguientes requisitos obligatorios:
+
+. *El ambiente completo deberá estar en una red aislada*
+// . *La red deberá soportar multicast*
+
+NOTE: Se debe tener en consideración que es posible utilizar los servidores JWS que {customer} ya posee, quedando como opcional la creación de los dos nuevos servidores JWS que se mencionan en este documento.
+
+A continuación se presenta la arquitectura de referencia a implementar, demostrando los nodos, sus interacciones y componentes.
+
+[.text-center]
+.Arquitectura de referencia
+image::plataforma-qa_davo.jpg[pdfwidth=90%,align=center]
+
+<<<
+=== Distribución
+
+
+.Dominio de aplicación: DocuGrid Server (módulo estático)
+[cols=">3,5", width=70%,align=center]
+|===
+| *Nombre dominio*
+| JDG
+
+| *Perfil servidor*
+| standalone-ha
+
+// | *Modo de clusterización (multicast)*
+// | Autodiscovery Multicast/udp
+
+| *Cantidad de nodos*
+| 2
+
+|===
+
+
+.Dominio de aplicación: DocuGrid Repo (módulo WAR)
+[cols=">3,5", width=70%,align=center]
+|===
+| *Nombre dominio*
+| EAP
+
+| *Perfil servidor*
+| standalone-ha
+
+// | *Modo de clusterización (multicast)*
+// | Autodiscovery Multicast/udp
+
+| *Cantidad de nodos*
+| 2
+
+|===
+
+.Balanceador: JWS
+[cols=">3,5", width=70%,align=center]
+|===
+| *Modo de Balanceo*
+| Mod_Cluster
+
+// | *Modo de clusterización (multicast)*
+// | Autodiscovery Multicast/udp
+
+| *Cantidad de nodos*
+| 2
+
+|===
+
+<<<
+=== Descripción del entorno de ejecución para cada nodo
+
+.Características {product-initials-jdg} {product-version-jdg}
+[cols="3,5", width=70%,align=center]
+|===
+| *vCPU*
+| {product-vcpu-jdg}
+
+| *RAM*
+| {product-ram-jdg}
+
+| *DISCO*
+| {product-hd-jdg}
+
+| *Interfaz de Red: {enviroment}*
+| {product-production-network-jdg}
+
+| *Interfaz de Red: Administrativa*
+| {product-admin-network-jdg}
+
+| *Interfaz de Red: Backup*
+| {product-backup-network-jdg}
+
+| *Sistema Operativo*
+| {product-os-jdg}
+
+|===
+
+.Características {product-initials-eap} {product-version-eap}
+[cols="3,5", width=70%,align=center]
+|===
+| *vCPU*
+| {product-vcpu-eap}
+
+| *RAM*
+| {product-ram-eap}
+
+| *DISCO*
+| {product-hd-eap}
+
+| *Interfaz de Red: {enviroment}*
+| {product-production-network-eap}
+
+| *Interfaz de Red: Administrativa*
+| {product-admin-network-eap}
+
+| *Interfaz de Red: Backup*
+| {product-backup-network-eap}
+
+| *Sistema Operativo*
+| {product-os-eap}
+
+|===
+
+.Características {product-initials-jws} {product-version-jws}
+[cols="3,5", width=70%,align=center]
+|===
+| *vCPU*
+| {product-vcpu-jws}
+
+| *RAM*
+| {product-ram-jws}
+
+| *DISCO*
+| {product-hd-jws}
+
+| *Interfaz de Red: {enviroment}*
+| {product-production-network-jws}
+
+| *Interfaz de Red: Administrativa*
+| {product-admin-network-jws}
+
+| *Interfaz de Red: Backup*
+| {product-backup-network-jws}
+
+| *Sistema Operativo*
+| {product-os-jws}
+
+|===
+
+<<<
+
+=== Distribución de particiones.
+.Distribución {product-initials-jdg} {product-version-jdg}
+[cols="3,5", width=70%,align=center]
+|===
+| *Punto Montaje*
+| *Tamaño*
+
+| */*
+| {mount-point-root-jdg}
+
+| */var*
+| {mount-point-var-jdg}
+
+| */var/log*
+| {mount-point-varlog-jdg}
+
+| */tmp*
+| {mount-point-tmp-jdg}
+
+| */home*
+| {mount-point-home-jdg}
+
+| */opt*
+| {mount-point-opt-jdg}
+
+| *swap*
+| {mount-point-swap-jdg}
+
+|===
+
+.Distribución {product-initials-eap} {product-version-eap}
+[cols="3,5", width=70%,align=center]
+|===
+| *Punto Montaje*
+| *Tamaño*
+
+| */*
+| {mount-point-root-eap}
+
+| */var*
+| {mount-point-var-eap}
+
+| */var/log*
+| {mount-point-varlog-eap}
+
+| */tmp*
+| {mount-point-tmp-eap}
+
+| */home*
+| {mount-point-home-eap}
+
+| */opt*
+| {mount-point-opt-eap}
+
+| *swap*
+| {mount-point-swap-eap}
+
+|===
+
+.Distribución {product-initials-jws} {product-version-jws}
+[cols="3,5", width=70%,align=center]
+|===
+| *Punto Montaje*
+| *Tamaño*
+
+| */*
+| {mount-point-root-jws}
+
+| */var*
+| {mount-point-var-jws}
+
+| */var/log*
+| {mount-point-varlog-jws}
+
+| */tmp*
+| {mount-point-tmp-jws}
+
+| */home*
+| {mount-point-home-jws}
+
+| */opt*
+| {mount-point-opt-jws}
+
+| *swap*
+| {mount-point-swap-jws}
+
+|===

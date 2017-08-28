@@ -1,0 +1,7 @@
+cl/redhat/docugrid/DocugridManager.class
+cl/redhat/docugrid/model/AttaDocument.class
+cl/redhat/docugrid/Base64$OutputStream.class
+cl/redhat/docugrid/Base64$InputStream.class
+cl/redhat/docugrid/model/Document.class
+cl/redhat/docugrid/Base64.class
+cl/redhat/docugrid/RESTCache.class
